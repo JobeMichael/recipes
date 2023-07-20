@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { ResponsiveWrapper } from "~/styles/shared";
 
 export const Main = styled.main`
@@ -8,4 +8,10 @@ export const Main = styled.main`
 
 export const Wrapper = styled.div`
   ${ResponsiveWrapper}
+`;
+
+export const GlobalStyle = createGlobalStyle`
+  margin: 0;
+  padding: 0;
+
 `;

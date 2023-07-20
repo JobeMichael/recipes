@@ -1,15 +1,18 @@
 "use client";
+import { IRecipe } from "~/interface";
 import * as S from "./RecipeListItem.styles";
 
-interface IMenuItemProps {
-  handleAddToCartClick: (item: any) => void;
+interface IProps {
+  handleClick: (recipe: IRecipe) => void;
+  recipe: IRecipe;
 }
 
-const RecipeListItem = ({ image, title }: any) => {
+const RecipeListItem: React.FC<IProps> = ({ recipe, handleClick }) => {
+  const { image, title } = recipe;
   return (
-    <S.MenuCard>
+    <S.MenuCard onClick={() => handleClick(recipe)}>
       <S.ImageWrapper>
-        <S.ItemCoverImage imageUrl={image}></S.ItemCoverImage>
+        <S.ItemCoverImage imageurl={image}></S.ItemCoverImage>
       </S.ImageWrapper>
       <S.Container>
         <p>{title}</p>

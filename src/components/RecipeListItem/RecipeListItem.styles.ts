@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MenuCard = styled.div`
+export const MenuCard = styled.a`
   height: 380px;
   width: 250px;
   border-radius: 20px;
@@ -10,6 +10,8 @@ export const MenuCard = styled.div`
   flex-direction: column;
   background-color: #fff;
   cursor: pointer;
+  border: none;
+  padding: 0;
 
   &:hover {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
@@ -20,8 +22,8 @@ export const ImageWrapper = styled.div`
   width: 250px;
 `;
 
-export const ItemCoverImage = styled.div<{ imageUrl: string }>`
-  background: url(${({ imageUrl }) => imageUrl});
+export const ItemCoverImage = styled.div<{ imageurl: string }>`
+  background: url(${({ imageurl }) => imageurl});
   width: 100%;
   height: 200px;
   background-repeat: no-repeat;
@@ -37,18 +39,9 @@ export const Container = styled.div`
   justify-content: space-between;
   padding: 20px;
   height: 100%;
-`;
 
-export const Footer = styled.div`
-  display: flex;
-  justify-content: space-between;
-`;
-
-export const Price = styled.div`
-  display: flex;
-  align-items: center;
-
-  h5 {
-    margin: 0 0 0 5px !important;
+  p {
+    font-size: 20px;
+    line-height: 1.5;
   }
 `;

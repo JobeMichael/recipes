@@ -1,9 +1,7 @@
-import RecipeDetailPage from "~/components/RecipeDetail/RecipeDetail";
-import RecipeListItem from "~/components/RecipeListItem/RecipeListItem";
-import Badge from "~/components/UI/Badge";
 import { RECIPE } from "~/config/contentType";
 import { IContentful } from "~/interface";
 import { client } from "~/lib/client";
+import Recipe from "~/module/Recipe/Recipe";
 import { getFormattedData } from "./util";
 
 async function getData(contentType: string): Promise<IContentful> {
@@ -21,13 +19,7 @@ export default async function Home() {
 
   return (
     <main>
-      <Badge color="red">New</Badge>
-      <Badge color="green">Updated</Badge>
-
-      <RecipeDetailPage recipe={arrFields[0]} />
-      {arrFields?.map((item) => (
-        <RecipeListItem key={item.id} image={item.image} title={item.title} />
-      ))}
+      <Recipe recipes={arrFields} />
     </main>
   );
 }

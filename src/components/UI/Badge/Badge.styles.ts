@@ -11,4 +11,5 @@ export const BadgeWrapper = styled.span<BadgeProps>`
   padding: 5px 10px;
   border-radius: 20px;
   display: inline-block;
+  text-transform: uppercase;
 `;

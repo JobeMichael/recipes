@@ -1,6 +1,6 @@
-import { IContentful } from "~/interface";
+import { IContentful, IRecipe } from "~/interface";
 
-export const getFormattedData = (data: IContentful) => {
+export const getFormattedData = (data: IContentful): IRecipe[] => {
   return (
     data?.items?.map((item, id) => {
       const recipe = item.fields;
