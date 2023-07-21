@@ -1,6 +1,6 @@
 import { render, screen } from "@testing-library/react";
 import { ThemeProvider } from "styled-components";
-import { theme } from "styles/theme";
+import { theme } from "~/styles/theme";
 import Header from "./Header";
 
 describe("Header", () => {
@@ -11,8 +11,8 @@ describe("Header", () => {
       </ThemeProvider>
     );
 
-    const headerElement = screen.getByText("Trade");
+    const headerElement = screen.getByTestId("header");
 
-    expect(headerElement).toBeInTheDocument();
+    expect(headerElement.outerHTML).toContain("Marley spoon");
   });
 });
