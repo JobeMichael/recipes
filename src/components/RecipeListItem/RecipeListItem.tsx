@@ -12,7 +12,10 @@ const RecipeListItem: React.FC<IProps> = ({ recipe, handleClick }) => {
   return (
     <S.MenuCard onClick={() => handleClick(recipe)}>
       <S.ImageWrapper>
-        <S.ItemCoverImage imageurl={image}></S.ItemCoverImage>
+        <S.ItemCoverImage
+          imageurl={image}
+          data-testid="recipe-image"
+        ></S.ItemCoverImage>
       </S.ImageWrapper>
       <S.Container>
         <p>{title}</p>

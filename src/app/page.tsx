@@ -15,7 +15,6 @@ async function getData(contentType: string): Promise<IContentful> {
 export default async function Home() {
   const data = await getData(RECIPE);
   const arrFields = getFormattedData(data);
-  console.log("🚀 ~ file: page.tsx:18 ~ Home ~ arrFields:", arrFields);
 
   return (
     <main>
